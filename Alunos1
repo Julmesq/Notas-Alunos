@@ -1,0 +1,73 @@
+<meta charset="UTF-8">
+ <script>
+ // Notas da AV1 e AV2
+ let notasAV1 = [7.5, 4.0, 6.5, 8.0, 3.5, 5.0, 7.0, 9.0, 6.0, 4.5];
+ let notasAV2 = [6.5, 5.0, 7.0, 7.5, 4.0, 6.0, 8.0, 8.5, 5.5, 5.0];
+ // a) Encontrar maiores e menores notas de AV1 e AV2
+ let maiorAV1 = notasAV1[0];
+ let menorAV1 = notasAV1[0];
+ let maiorAV2 = notasAV2[0];
+ let menorAV2 = notasAV2[0];
+ for (let i = 1; i < notasAV1.length; i++) {
+ if (notasAV1[i] > maiorAV1) {
+ maiorAV1 = notasAV1[i];
+ }
+ if (notasAV1[i] < menorAV1) {
+ menorAV1 = notasAV1[i];
+ }
+ if (notasAV2[i] > maiorAV2) {
+ maiorAV2 = notasAV2[i];
+ }
+ if (notasAV2[i] < menorAV2) {
+ menorAV2 = notasAV2[i];
+ }
+ }
+ document.write("Maior nota AV1: " + maiorAV1 + "<br>");
+ document.write("Menor nota AV1: " + menorAV1 + "<br>");
+ document.write("Maior nota AV2: " + maiorAV2 + "<br>");
+ document.write("Menor nota AV2: " + menorAV2 + "<br><br>");
+// b) Calcular e ordenar médias da turma
+ let medias = [];
+ for (let i = 0; i < notasAV1.length; i++) {
+ medias[i] = (notasAV1[i] + notasAV2[i]) / 2;
+ }
+ // médias em ordem crescente
+ for (let i = 0; i < medias.length- 1; i++) {
+ for (let j = 0; j < medias.length- i- 1; j++) {
+ if (medias[j] > medias[j + 1]) {
+ let ordem = medias[j];
+ medias[j] = medias[j + 1];
+ medias[j + 1] = ordem;
+ }
+ }
+ }
+ document.write("Médias em ordem crescente: <br>");
+ for (let i = 0; i < medias.length; i++) {
+ document.write(medias[i].toFixed(1) + "<br>");
+ }
+ document.write("<br>");
+ // c) Maior e menor média
+ let maiorMedia = medias[medias.length- 1];
+ let menorMedia = medias[0];
+ document.write("Maior média: " + maiorMedia.toFixed(1) + "<br>");
+ document.write("Menor média: " + menorMedia.toFixed(1) + "<br><br>");
+ // d) Alunos aprovados e em recuperação
+ let aprovados = 0;
+ let recuperacao = 0;
+ let mediasRecuperacao = [];
+ for (let i = 0; i < medias.length; i++) {
+ if (medias[i] >= 5.0) {
+ aprovados++;
+ } else {
+ mediasRecuperacao[recuperacao] = medias[i];
+ recuperacao++;
+ }
+}
+ // Mostra os resultados
+ document.write("Alunos aprovados: " + aprovados + "<br>");
+ document.write("Alunos em recuperação: " + recuperacao + "<br>");
+ document.write("Médias dos alunos em recuperação: <br>");
+ for (let i = 0; i < recuperacao; i++) {
+ document.write(mediasRecuperacao[i].toFixed(1) + "<br>");
+ }
+ </script>
