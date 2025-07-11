@@ -9,3 +9,5 @@ b) Calcular a média de notas da turma. A média da turma deverá ser apresentad
 c) Informar a maior média e a menormédiadaturma.
 
 d) Informar quantos alunos foram aprovados e quantos estão em  recuperação (considerando o critério de aprovação uma média igual ou  superior a 5,0 pontos), apresentar um novo vetor com médias inferior a 5,0  dos alunos emrecuperação. 
+
+ Desenvolver o código de programa utilizando linguagem Javascript e salvando com extensão .html;
