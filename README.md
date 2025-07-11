@@ -1,6 +1,6 @@
 # Notas-Alunos
 
- Elaborar um programa de Javascript que calcula as médias de  notas de umadeterminada sala de aula.
+ Elaborar um programa de Javascript que calcula as médias de  notas de uma determinada sala de aula.
 
 a) Ler um vetor com as notas da avaliação 1 e outro com as notas da  avaliação 2. Informar as maiores e menores notas de AV1 e AV2.
 
